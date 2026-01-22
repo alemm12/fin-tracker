@@ -24,22 +24,16 @@ export class ApiClient {
 
   private async request<T>(
     endpoint: string,
-    options: RequestInit = {}
+    options: RequestInit = {},
   ): Promise<T> {
     const headers: Record<string, string> = {
       "Content-Type": "application/json",
       ...(options.headers as Record<string, string>),
     };
-    console.log(headers);
-    console.log(endpoint);
-    console.log(this.baseUrl);
-    console.log("TOKEN: ", this.token);
 
     if (this.token) {
       headers.Authorization = `Bearer ${this.token}`;
     }
-
-    console.log(`${this.baseUrl}${endpoint}`);
 
     const response = await fetch(`${this.baseUrl}${endpoint}`, {
       ...options,
