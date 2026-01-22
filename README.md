@@ -306,7 +306,6 @@ GSI1SK: <date>
 Runs on every PR and push to main:
 
 - Type checking
-- Linting
 - Tests
 - Build verification
 - Terraform validation

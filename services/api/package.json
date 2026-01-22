@@ -7,8 +7,7 @@
     "build:zip": "bash scripts/build-and-zip.sh",
     "package": "pnpm build && pnpm build:zip",
     "test": "vitest",
-    "type-check": "tsc --noEmit",
-    "lint": "eslint src --ext .ts"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.490.0",
