@@ -38,6 +38,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build workspace packages
+        run: |
+          pnpm --filter "@fin-tracker/types" build
+          pnpm --filter "@fin-tracker/validation" build
+          pnpm --filter "@fin-tracker/shared" build
+
       - name: Build and Package API
         run: pnpm --filter @fin-tracker/api package
 
@@ -91,6 +97,12 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Build workspace packages
+        run: |
+          pnpm --filter "@fin-tracker/types" build
+          pnpm --filter "@fin-tracker/validation" build
+          pnpm --filter "@fin-tracker/shared" build
 
       - name: Build frontend
         run: pnpm --filter @fin-tracker/web build
