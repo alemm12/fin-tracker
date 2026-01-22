@@ -1,0 +1,33 @@
+{
+  "name": "@fin-tracker/api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/handlers/**/*.ts --bundle --platform=node --target=node20 --format=cjs --outdir=dist --external:@aws-sdk/* --sourcemap",
+    "build:zip": "bash scripts/build-and-zip.sh",
+    "package": "pnpm build && pnpm build:zip",
+    "test": "vitest",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.490.0",
+    "@aws-sdk/client-s3": "^3.490.0",
+    "@aws-sdk/lib-dynamodb": "^3.490.0",
+    "@aws-sdk/s3-request-presigner": "^3.490.0",
+    "@fin-tracker/shared": "workspace:*",
+    "@fin-tracker/types": "workspace:*",
+    "@fin-tracker/validation": "workspace:*",
+    "bcryptjs": "^2.4.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.133",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^20.11.0",
+    "@types/uuid": "^9.0.7",
+    "esbuild": "^0.19.11",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  }
+}

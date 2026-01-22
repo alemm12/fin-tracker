@@ -1,0 +1,23 @@
+{
+  "name": "@fin-tracker/shared",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "test": "vitest",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@fin-tracker/types": "workspace:*",
+    "dayjs": "^1.11.10",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.5",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  }
+}

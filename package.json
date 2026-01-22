@@ -1,0 +1,30 @@
+{
+  "name": "fin-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal finance tracker with AWS Lambda backend and Next.js frontend",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "type-check": "pnpm -r type-check",
+    "api:build": "pnpm --filter api build",
+    "api:test": "pnpm --filter api test",
+    "web:dev": "pnpm --filter web dev",
+    "web:build": "pnpm --filter web build",
+    "tf:init": "cd infrastructure/terraform && terraform init",
+    "tf:plan": "cd infrastructure/terraform && terraform plan",
+    "tf:apply": "cd infrastructure/terraform && terraform apply"
+  },
+  "workspaces": [
+    "packages/*",
+    "services/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0"
+}
